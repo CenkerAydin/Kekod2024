@@ -1,0 +1,85 @@
+1- Git Nedir?
+Git, Linux geliştiricisi Linus Torvalds tarafından geliştirilen versiyon kontrol sistemidir.
+
+2- Git pull ile git fetch komutlarının farkı nedir?
+Git fetch, lokal branch ile main branch arasındaki değişikliklerden haberdar olur. Git pull, lokal branch ile main branchi birbirine eşitler
+
+3-Eğer takım arkadaşımız "kodlarımı gönderdim, benim geliştirmemin üzerine devam et" derse ve gönderdiği kodları "git pull" ile lokalimize alamıyorsak nerelerde hata yapılmış olabilir?
+Büyük ihtimalle orada bir çakışma (conflict) durumu vardır. Conflict durumu genellikle farkı dallardan veya farklı kullanıcılardan gelen değişikliklerin, lokal branch ile aynı olmaması ve otomatik olarak birleştirilemeyecek durumlarda olduğunda gerçekleşir.
+
+4-git fetch origin" komutundaki "origin" neye karşılık gelmektedir? 
+Origin kelimesi uzak depodaki branchi işaret eder.
+
+5-"HEAD" kelimesi neyi temsil etmektedir?
+Üzerinde bulunduğumuz branchteki en son yapılan commit'i temsil etmektedir.
+
+6-"Staging Area" ya da "Index" diye isimlendirilen bölge tam olarak ne demektir?
+Kendi lokal makinemiz ile Github, Gitlab gibi sitelerde bulunan repository arasında bulunan geçici bir depolama alanıdır.
+
+7-"Untracked file" ne demektir?
+Untracked file,izlenmeyen dosya şeklinde çevirebiliriz. Git tarafından takip edilmeyen, Git'in içindeki değişikliklerin bir parçası olmayan dosyalardır. Git status komutunda Untracked files altındaki dosyalardır.
+
+8-".git" klasörünü silersek ne olur?
+Her şey gitmiş olur :)
+
+9-Kendi lokalimizde her "git init" komutunu kullanıdığımızda otomatik olarak "ReadMe.md" dosyası oluşturulmasını istiyorsak ne yapmalıyız?
+Önde ReadMe.md dosyası oluşturmamız lazım. Sonra bu dosyayı izlemeye almak için git add ile eklememiz lazım. Ardından bu dosyayı commit işlemiyle staging area almamız lazım.
+
+10-Git konusunda bahsi geçen "branch" yapısı nedir? Bize ne sağlar?
+Branch yapısı çok önemli işlevlere sahiptir. Main veya Master branchi dışında bir branch açarak ana repodan bağımsız, testler, featurelar yapabiliriz. Bu durum projenin ileriki durumlarda neler olabileceğini görmemiz açısından önemlidir. Ayrı bir branchtaki işlemler istediğimiz gibiyse ana branch ile merge edebilir değilse branchi silebiliriz.
+
+11-Sıfırdan bir "branch" nasıl oluşturabiliriz? 
+Sıfırdan bir branch oluşturmanın iki yolu vardır.
+1. git branch <branch.name>
+2. git checkout -b <branch.name>
+
+12-Var olan bir "branch"e nasıl geçebiliriz?
+Var olan branche geçmek için git checkout komutunu kullanmalıyız. Geçmek istediğimiz branche geçmek için git checkout <branch.name> kullanmalıyız.
+
+13-"git clone" komutunu kullanırken belirli bir spesifik branch'i sadece çekmek istiyorsak nasıl yapabiliriz?
+Spesifik bir branchi çekmek istiyorsak şu komutu yazmalıyız
+git clone --single-branch <branch.name> <url>
+
+14-"Merge conflict" ne demektir?
+Git'te iki farklı değişikliğin aynı satırları veya dosyaları içeren bölümlerin arasındaki farkın uyumsuz olduğunda ortaya çıkan durumdur.
+
+15-"git log" komutu ile hangi bilgileri görebiliriz?
+Git log komutu ile bir yaptığımız commitlerin geçmişini görüntüleyebiliriz.
+
+16-"git diff" ile kaç farklı iki durumun arasındaki değişiklikleri görebiliriz?
+Git diff iki farklı durumun arasındaki değişiklikleri gösterir.
+1. Working Directory ile Staging Area
+2.Staging Area ile son commit 
+
+17-Git reset ile neyi geri alıyoruz?
+Git reset ile staging areadaki dosyaları geri almak için kullanılır.
+
+18-"git commit" ile "git push" arasındaki fark nedir?
+Git commit, git add ile staging area aldığımız değişiklikleri kaydetmemizi sağlar.
+Git push ise git commit ile commitlediğimiz değişiklikleri uzak sunucuya göndermeyi sağlar.
+
+19-Atomic commit ne demektir?
+Atomic commit, bir değişiklik grubunun bir bütün olarak uygulanması ve kaydedilmesi anlamına gelir.
+
+20-Repository ne demektir?
+Repository uzak bir sunucuda dosyalarımızı, kodlarımızı tuttuğumuz bir depodur.
+
+21-"git tag" nedir? "git branch"’ten farkı nedir?
+Git tag, belirli bir commit noktasına etiket atmak için kullanılır. Bu sayede o noktayı daha kolay bulmayı sağlar.
+Git branch ise projedeki farklı geliştirme dallarını listelemek, yeni branchler oluşturmak, silmek veya birleştirmek için kullanılır.
+
+22-Git'i görsel olarak kullanabilmek için hangi üçüncü taraf araçları ve uygulamaları kullanabiliriz?
+Git Desktop, git kraken, source tree
+
+23-"GitHub" ile "git" arasındaki fark nedir? GitHub benzeri diğer siteler nelerdir? GitHub veya diğer sitelerdeki kullanıcı adlarını yazar mısınız?
+Github, kodların, dosyaların tutulduğu bir uzak sunucudur. 
+Git ise Github üzerinde işlem yapmak için kullanılan bir versiyon kontrol sistemidir. Github benzeri sitelere ise Gitlab örnek verilebilir. 
+
+24-main ya da master branch'inin diğer branchlerden farkı nedir?
+Main ya da master branchi bir projenin oluşturulduğunda otomatik olarak oluşturulan ana branchtir.
+
+25-".gitignore" dosyası nedir ve ne amaçla kullanılır? 
+.gitignore bir git deposunda takipe edilmesini istemediğimiz dosyaları ve dizinleri belirtmek için kullanılır.
+
+26-"git push origin --delete branch_name” nedir ve ne için kullanılır?
+Bu komut belirli bir uzak daldaki bir branchi silmek için kullanılır.
