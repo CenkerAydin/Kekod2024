@@ -1,0 +1,36 @@
+KOTLIN
+Kotlin, JetBrains tarafından geliştirilen ve Java sanal makinesi (JVM), Android, tarayıcılar ve native kodlar gibi çeşitli platformlarda çalışabilen modern bir programlama dilidir.Java İle uyumlu, tip güvenli ve pratik bir dildir.
+
+Kotlin dilinde file açabilirsin. Java dilinde böyle bir kullanım yoktur.
+
+OOP ile Fonksiyonel Programlayı destekler.
+Aynı kod tabanı ile farklı platformlarda çalışabilen uygulamalar geliştirilmesine olanak tanır.
+Kotlinde her şey nesnedir. Bu yüzden herhangi bir değişkende üye fonksiyonları ve özellikleri çağrılabilir.
+
+
+
+KOTLIN BASIC
+Dosya isimleri her zaman büyük yazılmalıdır.
+
+** val ile var farkı nedir?
+Bir değişkeni val ile tanımladığınızda o değişkenin değerini sonradan değiştiremezsiniz, değiştirmeye çalışsanız bile ide hata verecektir. (Val cannot reassigned)
+Bir değişkeni var ile tanımladığınızda ise o değişkenin değerini sonradan değiştirebilirsiniz. 
+Akılda kalması açısından var -> variable, val  -> value şeklinde düşünebilir.
+
+** val ile var arasında performans farkı var mıdır?
+Gözle görülecek şekilde büyük bir performans farkından bahsedilemez ama kullanım yerine göre performans maliyeti değişiyor.
+Günlük hayatta multithreading kullanmadan yazılan kodlarda var daha performanslıdır ama bu çok küçük miktarda olduğu için göz ardı edilebilir. 
+MultiThreading kullanılarak yazılan kodlarda ise val daha performanslıdır. Best Practice olarak val kullanılması önerilir.
+
+**val immutable değildir. readonly'dir.
+Immutable -> Bir değişkenin / nesnenin durumu asla ilk değerden farklı olamaz.
+Readonly -> İlk değer atamasından sonra tekrar değer atanamaz.
+
+Main fonksiyonu içerisinde yazdığın bir şeye dışarıdan erişemezsin bu yüzden main içinde bir değişkene get ve set yazamazsın.
+
+**Bir var değişkeni val keywordu kullanmadan nasıl val hale getirilebilir?
+Bir var değişkenini val keywordu kullanmadan val haline getirmek istiyorsak o değişkeni readonly yapmamız gerek. Bunu da set'i private yaparak sağlayabiliriz.
+
+** Kotlin dilinde veri tipleri (primitive types) birer sınıf gibi gözükürler. Ama çalışma zamanında sınıf olmayan ilkel (primitive) hallerine optimize edilerek çalışırlar.
+
+Kotlin dilinde yazdığın kodu java dilindeki karşılığını görebilmek için intellij idea içerisinde shift +shift -> Kotlin Byte Code -> Decompile komutlarını kullanarak java koduna erişip, karşılaştırma yapabilirsin.
