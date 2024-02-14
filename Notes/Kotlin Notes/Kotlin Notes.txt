@@ -1,0 +1,101 @@
+KOTLIN
+Kotlin, JetBrains tarafından geliştirilen ve Java sanal makinesi (JVM), Android, tarayıcılar ve native kodlar gibi çeşitli platformlarda çalışabilen modern bir programlama dilidir.Java İle uyumlu, tip güvenli ve pratik bir dildir.
+
+Kotlin dilinde file açabilirsin. Java dilinde böyle bir kullanım yoktur.
+
+OOP ile Fonksiyonel Programlayı destekler.
+Aynı kod tabanı ile farklı platformlarda çalışabilen uygulamalar geliştirilmesine olanak tanır.
+Kotlinde her şey nesnedir. Bu yüzden herhangi bir değişkende üye fonksiyonları ve özellikleri çağrılabilir.
+
+
+
+KOTLIN BASIC
+Dosya isimleri her zaman büyük yazılmalıdır.
+Kotlin'de değişken tipi vermeseniz bile IDE değişkenin değerine göre onun hangi tipte olduğuna karar verir, buna type reference denir.
+
+** val ile var farkı nedir?
+Bir değişkeni val ile tanımladığınızda o değişkenin değerini sonradan değiştiremezsiniz, değiştirmeye çalışsanız bile ide hata verecektir. (Val cannot reassigned)
+Bir değişkeni var ile tanımladığınızda ise o değişkenin değerini sonradan değiştirebilirsiniz. 
+Akılda kalması açısından var -> variable, val  -> value şeklinde düşünebilir.
+
+** val ile var arasında performans farkı var mıdır?
+Gözle görülecek şekilde büyük bir performans farkından bahsedilemez ama kullanım yerine göre performans maliyeti değişiyor.
+Günlük hayatta multithreading kullanmadan yazılan kodlarda var daha performanslıdır ama bu çok küçük miktarda olduğu için göz ardı edilebilir. 
+MultiThreading kullanılarak yazılan kodlarda ise val daha performanslıdır. Best Practice olarak val kullanılması önerilir.
+
+** val immutable değildir. readonly'dir.
+Immutable -> Bir değişkenin / nesnenin durumu asla ilk değerden farklı olamaz.
+Readonly -> İlk değer atamasından sonra tekrar değer atanamaz.
+
+Main fonksiyonu içerisinde yazdığın bir şeye dışarıdan erişemezsin bu yüzden main içinde bir değişkene get ve set yazamazsın.
+
+** Bir var değişkeni val keywordu kullanmadan nasıl val hale getirilebilir?
+Bir var değişkenini val keywordu kullanmadan val haline getirmek istiyorsak o değişkeni readonly yapmamız gerek. Bunu da set'i private yaparak sağlayabiliriz.
+
+** Kotlin dilinde veri tipleri (primitive types) birer sınıf gibi gözükürler. Ama çalışma zamanında sınıf olmayan ilkel (primitive) hallerine optimize edilerek çalışırlar.
+
+Kotlin dilinde yazdığın kodu java dilindeki karşılığını görebilmek için intellij idea içerisinde shift +shift -> Kotlin Byte Code -> Decompile komutlarını kullanarak java koduna erişip, karşılaştırma yapabilirsin. 
+
+NULLABLE
+Kotlin dili null safety karşılayan bir dildir.
+Kotlin dilinde, bir değişkenin null olabileceğini belirtmek için nullable türler kullanılır. Bu özellik sayesinde, null pointer exception hatasının önlenmesi sağlanır ve kodun daha güvenli hale gelmesini sağlar.
+Nullable türleri tanımlamak için değişken tipinin sonuna ? işareti konulur.
+Eğer bir değişkene tip verilmez ve direkt null değer ataması yapılırsa IDE type reference yaparken bu değişkenin değerini Nothing? olarak işaretler.
+Nullable bir değişkeni, bu değişkenin methodlarından birine ihtiyaç duyacaksak  ya da direkt olarak kullanacaksak bu durumda ideye ya bu değişkenin null olmayacağının garantisini vermemiz gerekiyor ya da null değilse çalışsın dememiz gerekiyor.
+Null olmayacağının garantisini !!. (Null Assertion Operator) komutuyla veriyoruz.
+Null değilse çalışsın demek için ise ?.  (Safe Call Operator) komutunu kullanmak gerekiyor.
+Eğer bir değişken null ise ve !! Operatörü kullanılırsa, Kotlin "NullPointerException" hatası fırlatır. Bu yüzden !! opatörü kullanılırken dikkatli olmak önemlidir.
+** Kotlin dilinde primitive tiplerin sınıf olarak gözüktüğünü ama runtimeda normal hallerine optimize edilerek çalıştıklarını biliyoruz, ama bir değişken tipi nullable yani örnek olarak Int? şeklindeyse o değişken tipi primitive tip olarak değil class olarak tutulur. Bu durumda gereksiz yere ? kullanımından kaçılması gerekiyor. 
+
+** Uygulamada kodun yeri önemli, hata çıktığında uygulama crash yicekse yani kritik yerlerde !! kullanılmalı.
+** Uygulamada kodun yeri önemli değil, yapılacak işlem kritik değilse ? kullanılmalı.
+
+NUMBERS
+Type  | Size  | Min Value  | Max Value
+Byte	8 bit	-128	     127
+Short	16 	-32768	     32767
+Int	32	-2^31.       2^31-1
+Long 	64	-2^63	     2^63-1
+
+UByte	8 bit	 0	     255
+UShort	16 	 0           65535
+UInt	32	 0           2^32-1
+ULong   64	 0.          2^64-1
+
+Type  | Size  | Significant Byte | Exponent Byte | Decimal Digits
+Float	32      24	           8 	       	   6-7
+Double  64	53		   11 		   15-16
+
+Değişkene değer ataması yaparken maksimum performansı almak için doğru değişken tipini seçmek önemlidir.
+Type Inference sırasında eğer sayı Int ifadeden büyük değilse default olarak Int set edilir, büyükse default olarak Long set edilir.
+Long değişken için sayının sonuna "L" konularak değer ataması yapılabilir.
+Float değişken için sayının sonuna "F" veya "f" konularak değer ataması yapılabilir.
+Double değişkenler için geleneksel gösterim desteklenir.
+Decimal tanımı yapılabilir [0-9]
+Octal tanımı yapılabilir   [0-7]
+Hexadecimal tanımı yapılabilir [0-15]
+Binary tanımı yapılabilir.  [0-1]
+
+Kodun okunabilirliğini arttırmak için büyük sayıları yazarken underscore "_" kullanılabilir.
+Örnek olarak val num =1_000_000 //1000000
+
+Boxed vs Unboxed
+Boxed -> Değişkenin obje referansı olarak tutulmasıdır.
+Unboxed -> Değişkenin primitive olarak tutulmasıdır.
+=== -> Değişkenlerin referansını karşılaştırırken kullanılır.
+== -> Değişkenlerin değerini karşılaştırırken kullanılır.
+
+Referansı kontrol edilen değişken byte aralığı içinde ise [-128,127] özel optimizasyonlarla aynı referans noktasına işaret eder. 1.Örnekte görebilirsiniz.
+
+    1.Örnek
+    val number: Int = 100
+    val boxedNumber: Int? = number
+    val anotherBoxedNumber: Int? = number
+    println(boxedNumber === anotherBoxedNumber) //true
+	
+    2.Örnek
+    val number2: Int = 10000
+    val boxedNumber2: Int? = number2
+    val anotherBoxedNumber2: Int? = number2
+    println(boxedNumber2 === anotherBoxedNumber2) //false	
+
