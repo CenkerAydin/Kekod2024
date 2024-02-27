@@ -99,3 +99,18 @@ Referansı kontrol edilen değişken byte aralığı içinde ise [-128,127] öze
     val anotherBoxedNumber2: Int? = number2
     println(boxedNumber2 === anotherBoxedNumber2) //false	
 
+Kontrol edilen değişken byte aralığı içinde ise [-128,127] özel optimizasyonlarla aynı referans noktasına işaret eder.
+
+TYPE CONVERSION
+İmplicit Type Conversion -> Örtülü -> Belirgin olmayan şekilde tip dönüşümü
+Explicit Tepe Conversion -> Açık -> Belirgin tip dönüşümü
+Kotlin'de implicit conversion yoktur.
+Tip dönüşümü için toByte(), toShort(), toInt(), toLong(), toFloat(), toDouble(), toChar(), toString(), toUByte(), toUShort(), toUInt(), toULong(), toDuration(), toBigDecimal(), toBigInteger() fonksiyonları kullanılabilir.
+
+Değer aralığı küçük olan tipler, büyük olan tiplere explicit şekilde dönüştürülebilir. Büyük olan tipler küçük olan tiplere çevrilirken yanlış çevrilme olabilir. (Anlamsız)
+
+String to Number dönüşümleri için Javadan bildiğimiz tip dönüşümlerini kullanabiliriz.
+Byte.ParseByte, java.lan.Short.parseShort(), java.lang.Int.parseInt(), java.lang.long.parseLong(), java.lang.Double.parseDouble(), java.lang.Float.parseFloat()
+
+Bölme, toplama ve çıkarmada büyük olan değişkenin tipi ne ise sonuç o olur.
+İki tane uç değeri çarparsan ikisinin çarpımının sonucu hangi tipteyse o tipte olacak. Hatalı bir sonuç olur ama (-) gibi.
