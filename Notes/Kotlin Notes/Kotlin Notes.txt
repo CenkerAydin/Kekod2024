@@ -114,3 +114,12 @@ Byte.ParseByte, java.lan.Short.parseShort(), java.lang.Int.parseInt(), java.lang
 
 Bölme, toplama ve çıkarmada büyük olan değişkenin tipi ne ise sonuç o olur.
 İki tane uç değeri çarparsan ikisinin çarpımının sonucu hangi tipteyse o tipte olacak. Hatalı bir sonuç olur ama (-) gibi.
+
+Characters
+16 bit yer kaplar.
+Tek tırnakların arasına harf, sayı, escape char ya da unicode yazarak kullanılır.
+Çift tırnak içerisine yazılırsa String olur, char olmaz.
+Number değer olan bir char değişken Int'e çevrilirken gerçek sayısal değerini almaz. Alacağı değer ASCII tablosundaki o sayısal değerin karşılığı olur.
+toInt() deprecated oldu bunun yerine code() kullan. Deprecated demek şu an çalışır ama diğer API seviyelerinde çalışmayabilir.
+Char içindeki değeri almak istiyorsan digitToInt() kullan.
+Escape karakterlerini de tanımlamak için kullanılır.
