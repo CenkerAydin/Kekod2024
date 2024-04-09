@@ -130,4 +130,14 @@ Stack alanı heap kısımdan daha hızlı çalışır.
 Referans tipli değişkenin kendisi stackte tutulur ama değeri heapte tutulur.
 Bir değişkenin null yaptığımızda değeri heapte boştur ama hala stackte değişken tutulacağı için bir değişkeni null yaptığımızda bellekte yer kaplamıyor ifadesi yanlış olur.
 
+Boolean
+8 bit alan kaplar. True ya da false değer ataması için kullanılır.
+Nullable versiyonları null değer de alır. 
+0 ya da 1 boolean olarak kullanılamaz.
+|| -> or && -> and ! -> not 
+|| ve && operatörleri lazily çalışma mekanizmasına sahiptir. Bu durum kodun daha performanslı ve hızlı çalışmasını sağlar. 
+Lazily mantığı -> Eğer || operatörünün solu true ise sağdaki değere bakılmadan sonuç true olarak döndürülür.
+Eğer && operatörünün solu false ise sağdaki değere bakılmadan sonuç false olarak döndürülür.
+Boolean değerinin true olmasını kontrol ettirmek için == true şeklinde kontrole gerek yoktur, zaten true ise süslü parantezler içerisine girecektir. Nullable ise bunu yapmak zorunludur.
+
 
