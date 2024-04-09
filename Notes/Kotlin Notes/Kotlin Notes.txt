@@ -123,3 +123,11 @@ Number değer olan bir char değişken Int'e çevrilirken gerçek sayısal değe
 toInt() deprecated oldu bunun yerine code() kullan. Deprecated demek şu an çalışır ama diğer API seviyelerinde çalışmayabilir.
 Char içindeki değeri almak istiyorsan digitToInt() kullan.
 Escape karakterlerini de tanımlamak için kullanılır.
+
+Heap-Stack Mevzusu
+Primitive tipteki değişkenler, hem değişkenin kendisi ve hemde değişkenin değeri için stackte yer kaplar. 
+Stack alanı heap kısımdan daha hızlı çalışır.
+Referans tipli değişkenin kendisi stackte tutulur ama değeri heapte tutulur.
+Bir değişkenin null yaptığımızda değeri heapte boştur ama hala stackte değişken tutulacağı için bir değişkeni null yaptığımızda bellekte yer kaplamıyor ifadesi yanlış olur.
+
+
