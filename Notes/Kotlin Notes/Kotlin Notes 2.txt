@@ -1,0 +1,20 @@
+STRING
+
+Yaklaşık olarak her karakter başına 2 byte yer kaplar.
+UTF-16 Encoding kullanılır.
+Çift tırnak içerisine yazılan karakterler bütünüdür.
+Bir string ifadenin tüm karakterlerini tek tek alıp char bir listeye atabilirsiniz.
+Stringler immutable'dır. Bir string ilk değer ataması yapıldıktan sonra değerini değiştiremez ya da yeni bir değer set edilemez.
+String üzerinde yapacağınız her işlem size yeni bir String objesi dönecektir. Stringin ilk hali değişmeyecektir. Stringler stackte değişkeni tutar value ise heapte tutulur.
+
+Farklı tipteki bir değişkenin önüne string bir değişkeni ya da ifade koyarak toplarsanız, sonuç string olacaktır. Ancak bir string değişken ya da ifadenin sonuna + operatoru ile farklı tipte bir değişken eklerseniz, kod çalışmaz.
+
+Herhangi bir değişkenin + operatörüne ihtiyaç duyulmadan direkt olarak " " arasına yazılarak kullanılabilir. Bunun için sadece $ işaretine ihtiyacınız vardır. Bu yapıya String template denir. Eğer değişkenin bir özelliğine ihtiyaç duyacaksanız ${ } şeklinde kullanılır.
+
+3 tane çift tırnak kullanarak Row String (Multiline String) oluşturulabilir. 
+Row Stringler ideye nasıl yazılıyorsa öyle kullanılır. Hizalamada bozulma olmaz.
+trimIndent() fonksiyonu ile bu Row String'in kenar boşluklarını silebilirsiniz. Bu silme işlemini yaparken tüm satırlardaki en soldaki karakteri baz alarak silme işlemini sağlar. Row Stringlerin içinde escape karakterler çalışmaz. İş görüşmelerinde Row sorusu kesin gelir. Ama bunu for döngüsüyle yap. Senden row istemezler.
+
+String.format() methodu, Javanın String.format() methoduna çok benzer şekilde çalışır. Bu metod, belirli bir string içinde yer tutucuları belirtilen değerlerle değiştirerek yeni bir string oluşturmanıza olanak tanır. Yer tutucuları formatlama belirtimleriyle tanımlanır ve bu belirtimler, değiştirilecek değerlerin nasıl biçimlendirileceği kontrol eder.
+%s -> string, %f -> float/double
+%d -> tam sayı, %n ->Yeni bir satır 
