@@ -18,3 +18,16 @@ trimIndent() fonksiyonu ile bu Row String'in kenar boşluklarını silebilirsini
 String.format() methodu, Javanın String.format() methoduna çok benzer şekilde çalışır. Bu metod, belirli bir string içinde yer tutucuları belirtilen değerlerle değiştirerek yeni bir string oluşturmanıza olanak tanır. Yer tutucuları formatlama belirtimleriyle tanımlanır ve bu belirtimler, değiştirilecek değerlerin nasıl biçimlendirileceği kontrol eder.
 %s -> string, %f -> float/double
 %d -> tam sayı, %n ->Yeni bir satır 
+
+ARRAY
+
+Aynı türden ya da belirtilen türün alt türlerinden, sabit sayıda veri tutan bir veri yapısıdır.
+En sık kullanılan Object-Type Arrayler'dir.
+Eğer primitive tipleri Object-Type Array olarak kullanırsanız, boxed kullanım yapmış olursunuz. Bu da performansa etki eder.
+Eğer sadece primitive verilerden oluşan arrayler oluşturacaksanız bu durumda Primitive Type Arrayler kullanın. ByteArray(byte[]), ShortArray(short[]), IntArray(Int[]), LongArray(long[]), DoubleArray(double[]), FloatArray(float[]), BooleanArray(boolean[]), CharArray(char[]) gibi.
+joinToString array içindeki her parametreyi alıp string olarak gönderir.
+
+arrayOf(aynı tip değerler) şeklinde tanımlanabilir.
+arrayOf<Any>(farklı tip değerler) şeklinde tanımlanabilir.
+arrayOfNulls<Type>(size) şeklinde verilen size değeri kadar null değer içeren array tanımlanabilir.Burada değişken tipinin verilmesine gerek yoksa nothing? Olarak işaretler.
+emptyArray() boş array tanımlar.
