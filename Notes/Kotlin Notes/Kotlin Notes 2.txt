@@ -31,3 +31,33 @@ arrayOf(aynı tip değerler) şeklinde tanımlanabilir.
 arrayOf<Any>(farklı tip değerler) şeklinde tanımlanabilir.
 arrayOfNulls<Type>(size) şeklinde verilen size değeri kadar null değer içeren array tanımlanabilir.Burada değişken tipinin verilmesine gerek yoksa nothing? Olarak işaretler.
 emptyArray() boş array tanımlar.
+
+Arrayler sabit büyüklüktedirler. Arraylere ekleme ve çıkarma yapmak aynı Stringlerde olduğu gibi memory'de yeni bir array oluşturulmasına neden olur.
+Arraylere ekleme yaparken repeat kullanımı önerilmez.
+Arrayler var olup değiştiği için mutabledır ama array ekleme yaptığında yeni bir array oluşacağı için immutabledır.
+EmptyArray 0 indexlidir, elemanı yoktur, eleman ekleyemezsin.
+EmptyArray'e yeni bir array atayıp kullanabilirsiniz, veya += yaparak eleman ekleyebilirsiniz ama bu durumda da ilk durumdaki gibi heapte yeni bir array oluşturur.
+Array<Type>(size){ higher order func } şeklinde de tanımlanabilir. Bu durumda higher order func içerisinde son satıra denk gelen değerler diziyi oluşturur.
+ByteArray, ShortArray, IntArray, LongArray, DoubleArray, FloatArray gibi ya da bunların unsigned halleri ile primitive array tanımlamaları da yapılabilir.
+Primitive type arrayDE .toTypedArray() fonksiyonu ile Primitive Type bir array Object-Typed bir array dönüştürülür.
+.toCharArray() gibi fonksiyonlar ile object type bir array primitive type array dönüştürülür.
+
+Bu tarz tanımlamalarda ilgili index değerine atama için set(index, value) ya da [index]=value kullanılabilir.
+Bu tarz tanımlamalarda ilgili index değerindeki değişken değerine get(index) ya da [index] şeklinde ulaşılabilir.
+
+Val ile tanımlanmış bir arrayın herhangi bir indexindeki değer değiştirilebilir.
+Val indexdeki değerlerin değişmesine karışmaz. Ancak ilgili diziyi başka bir dizi ile eşitlemenize izin verilmez.
+Bunu yapmak için tanımlamayı var ile değiştirmeniz gerekir.
+Arrayın size dışına çıkarsanız indexOutOfBounds hatasını alırsınız.
+
+Invariant Array 
+Arrayler üst classları yerine atanamazlar.
+String olan arraye any değişken atayamazsın. Yani Arrayler üst classı, child class yerine kullanılamıyor.
++array ile arrayleri genişletmek performans açısından sorun olur.
+
+Eğer bir tabloda ekleme silme yapacaksanız o tabloyu Collections ile kullanın sadece tabloyu gösterecekseniz array kullanmak avantajlı.
+
+Vararg kelimesi ile istediğimiz sayıda parametreyi kabul edebiliriz. Eğer vararg'a denk gelecek şekilde bir array kullanmak istiyorsanız, "Spread" "*" operatoru kullanırız. Spread operatoru verdiğiniz arrayın elemenlarının herbirinin bir variable olacak şekilde parametre olarak passlar.
+Arrayleri karşılaştırırken == operatoru kullanamazsınız, contentEquals (tek boyutlular için) ya da contentDeepEquals (çok boyutlular için) kullanmanız lazım.
+
+Arrayleri list'e ve set'e dönüştürebilirsiniz. Maplere de dönüştürebilirsiniz, ancak bunun için arrayın özel olarak Pair<K,V> formunda olması lazım.
