@@ -61,3 +61,26 @@ Vararg kelimesi ile istediğimiz sayıda parametreyi kabul edebiliriz. Eğer var
 Arrayleri karşılaştırırken == operatoru kullanamazsınız, contentEquals (tek boyutlular için) ya da contentDeepEquals (çok boyutlular için) kullanmanız lazım.
 
 Arrayleri list'e ve set'e dönüştürebilirsiniz. Maplere de dönüştürebilirsiniz, ancak bunun için arrayın özel olarak Pair<K,V> formunda olması lazım.
+
+RANGE
+Sonlu sayılı liste oluşturmaya yarar.
+Küçükten büyüğe liste oluşturmak için ".." Operatörünü ya da rangeTo() fonksiyonunu kullanabilirsiniz. "..<" operatörü ya da rangeUntil() fonksiyonu ile son sayının dahil olmasını istemediğiniz durumlarda kullanabilirsiniz.
+Charlarda oluşan bir liste de tanımlanabilir. Türkçe karakterleri içermez.
+Step fonksiyonu kullanarak liste oluşturulurken belli sayıda atlamalar yapabilirsiniz.
+CharRange, IntRange ve LongRange, isimlerine özel rangeler vardır, Progression olarak adlandırılır. Diğer değişken tiplerine olmamasının sebebi virgülden sonrası  sonsuz sayı içereceği için mesela double ve floatta bu duruma rastlanır.
+Bu progressionlar ile first, list, step, count gibi ek bilgiler alınabilir. Iterable <N> interface implement etmişlerdir. O sebeple map filter gibi fonksiyonları kullanabilirler.
+
+CONTROL FLOW
+++ önde ise arttırıp yazdırır. ++ sonda ise önce yazdırır sonra arttırır. CompareTo fonksiyonunda sayı karşılaştırılan sayıdan büyükse -1, küçükse +1, eşitse 0 çıktısını verir. Eğer karşılaştırma yapılan iki sayıdan biri nullable ise fonksiyon kullanmak daha mantıklı, çünkü operatörler null check yapmaz, fonksiyonlar yapar. 
+Stringler içine aktarma işlemine izin verilmez. Tek + ve -, pozitif mi negatif mi olduğunu belirtir.
+
+If-Else
+If-Else caselerinin state ve expression olmak üzere 2 kullanımı vardır. 
+State kullanımı sadece if else kullanarak şartlı durumlarımızı kodlamaktır.
+Expression kullanımı ise bir value'ya değer olarak eşitliğin karşı tarafına if else kodlarını yazmaktır.
+Else if yazmadan else içine direkt if yazmak performans sorunu yaratır.
+Kotlin'de if elselerin Expression kullanımında ötürü ternary operatörü : yoktur.
+2 farklı tipteki Number değişkenler karşılaştırırken equals fonksiyonu önce tiplerini karşılaştırdığı için eğer tipler uyuşmuyorsa, ide hata verecektir.
+Bazı durumlarda if else yazmaktansa, if case'ini yazıp return ya da throw gibi kodun devam etmesini bozacak ifadelerle kodu sonlandırabilirsiniz. Kod çalışırken bu if case'ine girmezse devam eden kod bloğu çalışır ki bu da pratikte else case'i demek olur.
+If case'İn iki tane değişkeni kontrol ediyorsan else ifte aynı değişkenleri kontrol etmelisin. If case içinde kontrol etmediğin değişkeni else ifte kullanma.
+
