@@ -84,3 +84,17 @@ Kotlin'de if elselerin Expression kullanımında ötürü ternary operatörü : 
 Bazı durumlarda if else yazmaktansa, if case'ini yazıp return ya da throw gibi kodun devam etmesini bozacak ifadelerle kodu sonlandırabilirsiniz. Kod çalışırken bu if case'ine girmezse devam eden kod bloğu çalışır ki bu da pratikte else case'i demek olur.
 If case'İn iki tane değişkeni kontrol ediyorsan else ifte aynı değişkenleri kontrol etmelisin. If case içinde kontrol etmediğin değişkeni else ifte kullanma.
 
+When
+Switch caselerin yerine yazılır.
+when(karşılaştırılabilecek-ifade){
+Value -> { }
+Value -> { }
+Else -> { }
+}
+
+* { } arasına tek satır kod yazılacaksa bu durumda { }leri kullanmayabilirsin.
+"TR", "AZ" gibi aynı kodu çalıştıracak caseler varsa araya virgül koyarak kullan.
+When yanına karşılaştırma ifadesi eklemeden, bunu caselerin yanına da ekleyebilirsiniz. Bunun artısı &&, ||, and, or, xor gibi ifadeleri kullanabilirsiniz.
+ is, !is ile bir classın referansı olunup olunmadığı kontrolu yapılabilir.
+Ranglerin in !in şeklinde kontrolu yapılabilir. 
+
