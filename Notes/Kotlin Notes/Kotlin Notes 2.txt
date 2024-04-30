@@ -98,3 +98,18 @@ When yanına karşılaştırma ifadesi eklemeden, bunu caselerin yanına da ekle
  is, !is ile bir classın referansı olunup olunmadığı kontrolu yapılabilir.
 Ranglerin in !in şeklinde kontrolu yapılabilir. 
 
+For
+3 farklı şekilde for tanımlanabilir.
+Value in list -> şeklinde value değerlerini alabilirsiniz.
+Index in list.indices -> şeklinde index değerlerini alabilirsiniz.
+(Index,value) in list.withIndex() -> şeklinde index, value değerlerini alabilirsiniz.
+repeat(size) şeklinde herhangi bir listeye ihtiyaç duymadan tekrarlayan işler yapabilirsiniz.
+Return kullanarak ilgili şart sağlanırsa döngüden çıkabilirsiniz.
+Continue kullanarak ilgili şart sağlanırsa, döngüye o değeri atlayarak devam edebilirsiniz.
+İç içe for döngüleri kullanıyorsak bir üstteki for'a değil de iki üstteki veya üç üstteki for'a dönmek istiyorsak label kullanabiliriz, bunun için labelname@ ifadesini ilgili forun önüne yazıp, return ya da continue demeliyiz.
+
+While
+Eğer bir döngüye ihtiyacınız varsa ve bu döngü sırasında if else ile bir şartlı duruma ihtiyacınız varsa for+if else yerine while kullanabilirsin.
+Return mainden çıkartır, break döngüden çıkartır.
+
+
