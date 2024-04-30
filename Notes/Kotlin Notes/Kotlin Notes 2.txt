@@ -112,4 +112,16 @@ While
 Eğer bir döngüye ihtiyacınız varsa ve bu döngü sırasında if else ile bir şartlı duruma ihtiyacınız varsa for+if else yerine while kullanabilirsin.
 Return mainden çıkartır, break döngüden çıkartır.
 
+Functions
+Fun keywordu ile başlar, Fonksiyon ismi verilir, parametre parantezleri açılır, ve parantezler girilir, : operatoru ile geri dönüş değeri yazılır.
+Geri dönüş değeri verilmeyen fonksiyonlar unit tipini geri döndürür, Fonksiyon çağrılırken ismi ve parametreleri kullanılır. 
+
+* Unit işlemin olduğu fakat değerin geri dönüşünün olmadığı, nothing hata durumlarında veya değişken değeri atanmamışsa kullanılır.
+
+Bir classın fonksiyonu çağrılırken nokta (.) işareti kullanılır.
+
+First Class Citizen -> Kotlin'de fonksiyonlar first class citizendır. Yani değişkenlere değer olarak atanabilir, başka fonksiyonlara parametre olarak verilebilir, ya da bir fonksiyonun geri dönüş değerini alabilir.
+
+Fonksiyon parametresini fonksiyon içerisinde aynı isimle değişkene atarsan return değeri içerde tanımladığın değişkeni kullanır. Name shadowed denir, dikkat edilmesi gereken bir durumdur.
+
 
