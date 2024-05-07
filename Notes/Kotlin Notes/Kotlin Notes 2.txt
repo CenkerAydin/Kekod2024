@@ -124,4 +124,19 @@ First Class Citizen -> Kotlin'de fonksiyonlar first class citizendır. Yani değ
 
 Fonksiyon parametresini fonksiyon içerisinde aynı isimle değişkene atarsan return değeri içerde tanımladığın değişkeni kullanır. Name shadowed denir, dikkat edilmesi gereken bir durumdur.
 
+Fonksiyonlarda default arguments (name argument)
+
+Name argumentleri kullanarak yapılan işlemlere fonksiyon overload yaparsınız.
+Default değeri olan parametrelere sahip bir fonksiyon çağrılırken default değeri olan parametreleri yazmak şart değildir.
+Default değeri olan bu parametreler opsiyonel parametrelerdir.
+
+Default değeri olan parametrelere değer atanmadan fonksiyon çağrılacaksa bu durumda parametre sırası önemlidir. = ile fonksiyon parametresine default değer verilebilir.(Default argument)
+Bu bize tekrar tekrar aynı fonksiyonun farklı versiyonlarını yazmak durumunda kalmayız.
+Named argument verdiğinde sıralamanın önemi yoktur.
+
+Default değeri olan parametrelere sahip bir fonksiyon java sınıflarından çağrılacaksa, Bu fonksiyona @JvmOverloads annotation'ı verilmelidir. Böylece yazılan kod Jvm'e hazır hale getirilirken, ilgili fonksiyonun tüm varyasyonları yazılır.
+
+Aynı fonksiyon içerisinde birden fazla vararg tanımı yapılmasına izin verilmez.
+
+
 
