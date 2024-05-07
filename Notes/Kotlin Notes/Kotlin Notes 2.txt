@@ -181,4 +181,31 @@ Bir sınıfın içinde farklı bir sınıfa ait extension fonksiyon yazılırsa,
 
 Bir sınıfa extension fonksiyon yazılabildiği gibi extension property'De yazılabilir. Bunun sebebi aslında propertylerin get() ve set() methodlarından oluşmasıdır. Bu extension propertylerin içerisinde field tanımlanamaz. Dolayısıyla aslında gerçek anlamda bir değişken extension yapılamaz. Exnteison propertye değişken verilemez. Pratikte extension property, ext. Fonksiyon ile aynıdır.
 
-Nullable extension fonksiyon da yazılabilir. Companion Objectlere de ext. Yazılabilir.
+Nullable extension fonksiyon da yazılabilir. Companion Objectlere de ext. yazılabilir.
+
+Higher Order Fonksiyon
+Fonksiyonlar Kotlin'de "FirstClassCitizen" özelliğine sahiptir. Yani değişkenlere değer olarak atanabilir, başka fonksiyona parametre olarak verilebilir ya da bir fonksiyonun geri dönüş değerini alabilir.
+Higher order fonksiyonun basics bir fonksiyona parametre olarak verilen fonksiyonlardır. Parametre olarak verilmekten kasıt, fonksiyonun çağrımının parametre kısmında yapılması değil, fonksiyonun gövdesinin(bodysi) yanı süslü parantezler arasında kalan görev alanının başka bir fonksiyona parametre olarak verilmesidir.
+
+Fun foo(normalFunc (message: String) -> Unit){
+
+}
+
+Higher Order Fonksiyonları tanımlanan 3 yolu vardır.
+1. Bir değişkene atayarak fonksiyonu tanımlayabilirsiniz. Bu durumda süslü parantezler yanına higher order fonksiyonun aldığı parametreler lambda okundan önce aralarına , koyularak yazılır. Hoş tek parametre alıyorsa bu parametreyi yazmak zorunda değilsiniz. Bu durumda hof size "it" kelimesi ile hof'ın parametresini ifade eder.
+
+Val hof1 = {surname: String -> "surname: $surname" }
+
+2. İsmi olmayan "anonymous fonksiyon" tanımlamaları da hof olarak, normal bir fonksiyona parametre olarak verilebilir. 
+
+Val anonymousfunc = fun(surname: String): String { return "surname: $surname"}
+
+3.Anonymous fonksiyonun expression olarak kullanımı da hof olarak normal bir fonksiyona parametre olarak verilebilir.
+
+Val anony = fun(surname: String): String = "surname: $surname"
+
+Fonksiyon bodysini istiyorsan ::fonkismi olarak çağırım yapabilirsin Hof olurken tek bir şart var hof beklenen parametre sayısı ile fonksiyon parametre sayısı aynı olmalı ve tipi aynı olmalı ve fonksiyon geri dönüş tipi aynı olmalı.
+
+:: operatoru fonksiyon bodysini kullanır.
+Hof'da fonksiyon parametreleri isimlendirilmez tipi yazılır.
+Hof'a default değer vererek opsiyonel hale getirebiliriz.
