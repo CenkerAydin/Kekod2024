@@ -138,5 +138,25 @@ Default değeri olan parametrelere sahip bir fonksiyon java sınıflarından ça
 
 Aynı fonksiyon içerisinde birden fazla vararg tanımı yapılmasına izin verilmez.
 
+Infix Function
+Daha okunaklı kod yazmak için kullanılır.
+. (Nokta) kullanımını kaldırır.
+Bir fonksiyonu infix hale getirebilmek için 5 şart vardır.
+1. Infix keyword ile başlar.
+2. Fonksiyonu bir üye fonksiyon olmalıdır. (Bir sınıfa ait olmalıdır.)
+3. Ya da bir extension fonksiyon olmalıdır.
+4. Sadece bir parametre olmalıdır. Bu parametre vararg olamaz.
+5. Infix methodun parametresi default değer alamaz.
+
+And, or, xor gibi onlarca infix fonksiyon yazılabilir.
+Infix fonksiyon default değer alamama sebebi çağıramama sebebi
+awesomeInstance downloadImage "www.google.com.tr" -> doğru kullanım.
+awesomeInstance      "   	-> default değerle kullanımı anlamsız.
+
+Matematiksel operatörlerin, tip dönüşümlerin, range kullanımın, infix methodlara göre işlem önceliği vardır.
+Infix methodların da mantık operatörlerine göre önceliği vardır.
+Bir sınıfın içerisindeyken this kullanımı size bulunduğu sınıfı işaret eder.
+Bir sınıfın dışarısındayken infix methodu çağrımı yapılırsa this kullanılamaz.
+
 
 
