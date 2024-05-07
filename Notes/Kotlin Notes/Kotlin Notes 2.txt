@@ -158,5 +158,27 @@ Infix methodların da mantık operatörlerine göre önceliği vardır.
 Bir sınıfın içerisindeyken this kullanımı size bulunduğu sınıfı işaret eder.
 Bir sınıfın dışarısındayken infix methodu çağrımı yapılırsa this kullanılamaz.
 
+---------------------------
+Bir fonksiyon herhangi bir sınıfın içerisinde değil de bir dosyanın içerisinde boşlukta tanımlanıyorsa top level function adını alır.
+Fonksiyon içerisinde fonksiyon tanımı kotlin'de yapılabilir. Local fonksiyon denir.
+Böyle bir kullanımın sebebi, yazdığınız fonksiyonun kendi sınıfınızdan dahi çağrılmasını istemeyebilirsiniz. Bu fonksiyonun herhangi bir başka fonksiyon ya da sınıf için değiştirilmesini istemeyebilirsiniz. Reflection ile fonksiyonlarınız erişilirken gizli kalsın isteyebilirsiniz. Bu gibi durumlarda bu çok önemli fonksiyonunuzu başka bir fonksiyon içerisinde yazabilirsiniz. Bir sınıfın içerisindeki fonksiyonlara üye fonksiyonlar denir. Fonksiyon içerisindeki fonksiyonu o fonksiyon içerisi dışında hiçbir yerden erişemezsiniz.
+---------------------------
 
+Extension Fonksiyonlar
+Üzerinde değişiklik yapamadığınız (readonly) sınıflara, ya da değiştirme yapmak istemediğiniz sınıfların içerisine yazmadan fonksiyon tanımlayabilmemizi sağlar. Böylece o sınıfa üye bir fonksiyon yazmış oluruz. 
+* Yazılan extension fonksiyon o sınıfın gerçek bir fonksiyonu olamayacaktır.
+Extension yazacağımız sınıfa reciver sınıf denir.
 
+Extension fonksiyonlar isterseniz direkt valuelar üzerinden çağrılabilir. İsterseniz de değişkenler üzerinden Infix fonksiyonu extension fonksiyon ile kullanılabilir. Normal fonksiyon ile extension fonksiyon arasında sadece syntax farklı, arka planda ikisi de static olarak tutulur.
+Javada hangi sınıfı extension edeceksek parametre olarak veriyorduk (util sınıfı) burada fonksiyonel programlaya bakış açımızı yansıtıyor, ve syntaxı basit.
+
+*Extension fonksiyonu bir class içerisinde yazarsak sadece o class içinde kullanılır, global kullanımı bozulur.
+
+**Kotlin'de bir fonksiyon extension olsun olmasın top level olarak yazılıyorsa her yerden erişilebilir olur, global olur, static olur.
+Bir extension fonksiyon tek parametre alıyorsa infix kullanımıyla birlikte yazılabilir.
+
+Bir sınıfın içinde farklı bir sınıfa ait extension fonksiyon yazılırsa, bu sınıfın içinde aynı isimde normal fonksiyon olsa bile, extension fonksiyon içerisinde, aynı isme sahip fonksiyon çağrılırsa bu extension fonksiyona işaret eder. Sınıfın aynı isimdeki üye fonksiyonunu extension fonksiyon içerisinde çağırmak için this@classname.memberfunc() şeklinde çağırım yapılmalıdır.
+
+Bir sınıfa extension fonksiyon yazılabildiği gibi extension property'De yazılabilir. Bunun sebebi aslında propertylerin get() ve set() methodlarından oluşmasıdır. Bu extension propertylerin içerisinde field tanımlanamaz. Dolayısıyla aslında gerçek anlamda bir değişken extension yapılamaz. Exnteison propertye değişken verilemez. Pratikte extension property, ext. Fonksiyon ile aynıdır.
+
+Nullable extension fonksiyon da yazılabilir. Companion Objectlere de ext. Yazılabilir.
